@@ -1,0 +1,52 @@
+<!doctype html>
+ <html lang="pt-BR">
+ <head>
+ <meta charset="utf-8">
+ <title>Incorporando Javascript em Páginas HTML</title>
+<!-- Incorporando um arquivo .js externo -->
+ <script src="script.js"></script>
+ </head>
+ <body>
+ <div id="exibe_resultado"> Resultado da Multiplicação: </div>
+ </body>
+ <script type="text/javascript">
+
+    var numeros = [];
+
+    numeros[0] = solicitaprimeironumero();
+    numeros[1] = solicitasegundonumero();
+    var resultadodivisao = divida(numeros);
+
+    alert('O resultado da divisão é igual a: ' + resultadodivisao);
+
+    function solicitaprimeironumero(){
+        var numero1 = prompt("Insira o primeiro numero: ");
+        if (numero1<0){
+            alert("O numero precisa ser inteiro e positivo");
+            return solicitaprimeironumero();
+        }
+        else{
+            return numero1;
+        }
+    }
+
+    function solicitasegundonumero() {
+        var numero2 = prompt("Insira o segundo numero: ");
+        if (numero2<0){
+            alert("O numero precisa ser inteiro e positivo");
+            return solicitasegundonumero();
+        }
+        else{
+            return numero2;
+        }
+    }
+
+    function divida(numeros) {
+        var resultado = 0;
+        resultado = numeros[0] / numeros[1];
+        return resultado;
+    }
+
+ 
+ </script>
+ </html>
